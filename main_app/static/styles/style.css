@@ -1,0 +1,121 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&display=swap');
+
+body {
+    background-color: lightslategray;
+}
+
+p {
+  font-size: 14px;
+  color: black;
+}
+
+h1 {
+    color: white;
+    text-align: center;
+    font-size: 80px;
+    margin:10px 0;
+}
+
+#header {
+    font-family: 'Dancing Script', cursive;
+    align-items: center;
+    width: 100%;
+    max-height: fit-content;
+    background-color: lightslategray;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+}
+
+.flex-container {
+    display: flex;
+    width: 100vw;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    background-color: darkslategrey;
+    padding: 0;
+    margin: 20px 0 0 0;
+    list-style: none;
+  }
+  
+  .flex-item {
+    background: white;
+    padding: 5px;
+    width: 330px;
+    height: 600px;
+    margin-top: 10px;
+    color: white;
+    font-weight: bold;
+    font-size: 2em;
+    text-align: left;
+    border-radius: .2em;
+  }
+
+  #homepane {
+    background: darkslategray;
+    height: 600px;
+  }
+
+  #menu-bar {
+    background: darkslategrey;
+    padding: 1px;
+    width: 330px;
+    height: 350px;
+    margin-top: 25px;
+    color: white;
+    font-size: 3em;
+    text-align: center;
+    border-radius: .2em;
+    font-family: 'Dancing Script', cursive;
+  }
+
+
+  img, iframe {
+    max-width: 100%;
+    max-height: 100%;
+    display: block;
+}
+
+#user {
+    text-align: center;
+    color: white;
+    font-family: Avantgarde, TeX Gyre Adventor, URW Gothic L, sans-serif;
+
+}
+
+#login-message {
+    text-align: center;
+    color: white;
+    padding-bottom: 5px;
+    font-family: Avantgarde, TeX Gyre Adventor, URW Gothic L, sans-serif;
+    margin-block-start: 10px;
+    margin-bottom: 10px;
+}
+
+#button-border {
+    border: 1px solid white;
+    width: 80px;
+    height: 40px;
+    border-radius: .5em;
+    margin-left: 20px;
+}
+
+#login-info {
+    align-items: center;
+}
+
+#folio-title {
+    color: white;
+    font-size: 35px;
+    font-family: Avantgarde, TeX Gyre Adventor, URW Gothic L, sans-serif;
+}
+.folio-text {
+    color: white;
+    font-size: 15px;
+    font-family: Avantgarde, TeX Gyre Adventor, URW Gothic L, sans-serif;
+}
+
+#currently-selected {
+    color: yellow;
+}
+
