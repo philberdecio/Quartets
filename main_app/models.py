@@ -22,6 +22,3 @@ class Entry (models.Model):
     text = models.TextField(max_length=None, blank=True)
     annote = models.TextField(max_length=150, blank=True)
     quartet = models.ForeignKey(Quartet, on_delete=models.CASCADE, related_name="entries")
-
-    def __str__(self):
-        return self.name

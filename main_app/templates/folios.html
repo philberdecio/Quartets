@@ -1,8 +1,22 @@
 {% extends 'base.html' %}
 {% block content %}
 <div class = "wrapper">
-    <div class="flex-container">
-        <div id = "homepane"><h1>Folios Page</h1>></div>
+    <div class="flex-container" id="folios_container">
+        <!-- <div id = "homepane"><h1>Folios Page</h1>></div> -->
+        <div class ="flex-item" id ="folio-menu">
+            <h2 id="my-folios">My Folios</h2>
+            {% for folio in folios %}
+                <div class = "folio-name-group">
+                    <a class ="folio-name" href="{% url 'folio_detail' folio.pk %}" >{{ folio.name }}</a></br>
+                    <a href="/folios/{{folio.id}}/delete" class="folio-delete-link">DELETE</a>
+                </div>
+            {% empty %}
+                <h2>You haven't created any folios yet</h2>
+            {% endfor %}
+            <div class="create-link">
+                <a href="{% url 'new_folio' %}">Create New Folio</a>
+            </div>
+        </div>
     </div>
 </div>
 {% endblock %}

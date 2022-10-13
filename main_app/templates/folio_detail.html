@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class = "wrapper">
+    <div class="flex-container" id="folios_container">
+        {% for quartet in folio.quartets.all %}
+        <div class="flex-item"><p>{{ quartet.name }}</p></div>
+            {% empty %}
+                <h4>No Quartets in this folio</h4>
+            {% endfor %}
+        <div id ="menu-bar">
+            <a href="{% url 'folio_update' folio.pk %}"><h3 class ="folio-name">{{ folio.name }}</h3></a>
+        </div>
+    </div>
+</div>
+{% endblock %}
