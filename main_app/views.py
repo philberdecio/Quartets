@@ -2,7 +2,7 @@ from django.shortcuts import render
 from django.views import View 
 from django.http import HttpResponse
 from django.views.generic.base import TemplateView
-from .models import Folio, Quartet
+from .models import Folio, Quartet, Entry
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.views.generic import DetailView
 from django.urls import reverse
@@ -39,6 +39,7 @@ class FolioDetail(DetailView):
         context = super().get_context_data(**kwargs)
         context["folios"] = Folio.objects.all()
         context["quartets"] = Quartet.objects.all()
+        context["entries"] = Entry.objects.all()
         return context
 
 class FolioUpdate(UpdateView):
@@ -54,3 +55,14 @@ class FolioDelete(DeleteView):
     model = Folio
     template_name = "folio_delete_confirmation.html"
     success_url = "/folios/"
+
+class QuartetDetail(DetailView):
+    model =Quartet
+    template_name = "quartet_detail.html"
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context["folios"] = Folio.objects.all()
+        context["quartets"] = Quartet.objects.all()
+        context["entries"] = Entry.objects.all()
+        return context

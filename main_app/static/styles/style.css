@@ -157,3 +157,7 @@ a {
     font-size: 10px;
     margin-top: 0px;
 }
+
+a:visited { 
+    text-decoration: none; 
+}
