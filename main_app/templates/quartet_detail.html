@@ -2,6 +2,7 @@
 {% block content %}
 <div class = "wrapper">
     <div class="flex-container" id="folios_container">
+        <p>{{ quartet }}</p>
         {% for entry in quartet.entries.all %}
             <div class="flex-item"><p>{{ entry.text }}</p></div>
         {% endfor %}
@@ -11,9 +12,10 @@
         <div id ="menu-bar">
             <h3 class ="folio-name">{{ folio.pk }}</h3>
             {% for this_quartet in folio.quartets.all %}
-            <h3>{{ folio.quartets.all }}</h3>
+                <h3>{{ folio.quartets.all }}</h3>
             {% endfor %}
         </div>
     </div>
+    {{ quartets.all }}
 </div>
 {% endblock %}

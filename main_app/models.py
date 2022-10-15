@@ -17,7 +17,6 @@ class Quartet(models.Model):
         return self.name
 
 class Entry (models.Model):
-    type = models.CharField(max_length=100)
     url = models.TextField(max_length=None, blank=True)
     text = models.TextField(max_length=None, blank=True)
     annote = models.TextField(max_length=150, blank=True)

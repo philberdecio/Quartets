@@ -2,17 +2,15 @@
 {% block content %}
 <div class = "wrapper">
     <div class="flex-container" id="folios_container">
-        {% for quartet in folio.quartets.all %}
-            <div class="flex-item"><p>{{ quartet.name }}</p></div>
-        {% endfor %}
-        {% if folio.quartets.all|length < 4 %}
-            <div class="flex-item"><p>new quartet</p></div>
-        {% endif %}
         <div id ="menu-bar">
             <a href="{% url 'folio_update' folio.pk %}"><h3 class ="folio-name">{{ folio.name }}</h3></a>
             {% for quartet in folio.quartets.all %}
-            <a href="{% url 'quartet_detail' folio.pk quartet.pk %} ">{{quartet.name }}</a>
-            {% endfor %}
+            <a class="quartet-link" href="{% url 'quartet_detail' folio.pk quartet.pk %} ">         
+                {{quartet.name }}</a><br>
+                {% endfor %}
+            {% if folio.quartets.all|length < 4 %}
+                <div class="flex-item quartet-link" id ="new-quartet-link"><a href="{% url 'new_quartet' folio.pk %}">New Quartet</a></div>
+            {% endif %}
         </div>
     </div>
 </div>

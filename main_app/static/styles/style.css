@@ -63,10 +63,10 @@ h1 {
     height: 350px;
     margin-top: 25px;
     color: white;
-    font-size: 3em;
+    font-size: 30px;
     text-align: center;
     border-radius: .2em;
-    font-family: 'Dancing Script', cursive;
+    font-family: Avantgarde, TeX Gyre Adventor, URW Gothic L, sans-serif;
   }
 
 
@@ -120,27 +120,37 @@ h1 {
 }
 
 #my-folios {
-    color: black;
-    font-family: Avantgarde, TeX Gyre Adventor, URW Gothic L, sans-serif;
+    color: white;
+    font-family: 'Dancing Script', cursive;
 }
 
 .folio-name {
-    font-size: 22px;
+    font-size: 20px;
     text-decoration: none;
     font-family: Avantgarde, TeX Gyre Adventor, URW Gothic L, sans-serif;
+    color: white;
 }
 
 #folio-menu {
     text-align: center;
+    background: darkslategray;
+    height: auto;
+}
+
+.create-link-div {
+    margin-top: 30px;
+    font-size: 27px;
+    color: white;
 }
 
 .create-link {
-    margin-top: 30px;
-    font-size: 27px;
+    color: white;
+    font-family: Avantgarde, TeX Gyre Adventor, URW Gothic L, sans-serif;
+
 }
 
 .folio-name > a {
-    font-size: 22px;
+    font-size: 20px;
     text-decoration: none;
     font-family: Avantgarde, TeX Gyre Adventor, URW Gothic L, sans-serif;
 }
@@ -151,13 +161,27 @@ a {
 
 .folio-name-group {
     justify-content: center;
+    margin-bottom: 10px;
+    border: 2px solid white;
+    border-radius: .2em;
 }
 
 .folio-delete-link {
-    font-size: 10px;
+    font-size: 12px;
     margin-top: 0px;
+    color: white;
 }
 
 a:visited { 
     text-decoration: none; 
+}
+
+#new-quartet-link {
+    font-family: Avantgarde, TeX Gyre Adventor, URW Gothic L, sans-serif;
+    font-size: 35px;
+}
+
+.quartet-link {
+    color: white;
+    margin: 20px;
 }

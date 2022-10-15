@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.views import View 
 from django.http import HttpResponse
 from django.views.generic.base import TemplateView
@@ -56,13 +56,39 @@ class FolioDelete(DeleteView):
     template_name = "folio_delete_confirmation.html"
     success_url = "/folios/"
 
-class QuartetDetail(DetailView):
-    model =Quartet
+class QuartetDetail(TemplateView):
     template_name = "quartet_detail.html"
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context["folios"] = Folio.objects.all()
+        # context["folios"] = Folio.objects.get(pk=self.object.pk)
         context["quartets"] = Quartet.objects.all()
         context["entries"] = Entry.objects.all()
         return context
+
+class QuartetCreate(CreateView):
+    model = Quartet
+    fields = ['name', 'folio']
+    # def post(self, pk):
+    #     folio = Folio.objects.get(pk=pk)
+    template_name = "new_quartet.html"
+    
+    def get_success_url(self):
+        return reverse('folio_detail', kwargs={'pk': self.object.folio.pk})
+
+class TextEntryCreate(CreateView):
+    model = Quartet
+    fields = ['text']
+    template_name = "new_text_entry.html"
+    
+    def get_success_url(self):
+        return reverse('quartet_detail', kwargs={'pk': self.object.pk})
+
+class EmbedEntryCreate(CreateView):
+    model = Quartet
+    fields = ['url', 'annote']
+    template_name = "new_embed_entry.html"
+    
+    def get_success_url(self):
+        return reverse('quartet_detail', kwargs={'pk': self.object.pk})
