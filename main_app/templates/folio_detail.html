@@ -7,9 +7,10 @@
             {% for quartet in folio.quartets.all %}
             <a class="quartet-link" href="{% url 'quartet_detail' folio.pk quartet.pk %} ">         
                 {{quartet.name }}</a><br>
+                <a href="{% url 'quartet_delete' folio.pk quartet.pk %}" class="folio-delete-link">DELETE</a>
                 {% endfor %}
             {% if folio.quartets.all|length < 4 %}
-                <div class="flex-item quartet-link" id ="new-quartet-link"><a href="{% url 'new_quartet' folio.pk %}">New Quartet</a></div>
+                <div class="quartet-link"><a id ="new-quartet-link" href="{% url 'new_quartet' folio.pk %}">New Quartet</a></div>
             {% endif %}
         </div>
     </div>

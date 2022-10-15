@@ -179,9 +179,14 @@ a:visited {
 #new-quartet-link {
     font-family: Avantgarde, TeX Gyre Adventor, URW Gothic L, sans-serif;
     font-size: 35px;
+    color: white;
 }
 
 .quartet-link {
     color: white;
     margin: 20px;
+}
+
+.folio-link {
+    color: white;
 }

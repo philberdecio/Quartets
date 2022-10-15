@@ -1,10 +1,10 @@
 {% extends 'base.html' %} {% block content %}
-<h3>Are you sure you want to Delete {{folio.name}}?</h3>
+<h3>Are you sure you want to Delete {{quartet.name}}?</h3>
 <form method="post">
     {% csrf_token %}
     <div class="buttons">
         <input type="submit" value="Confirm" />
-        <a href="{% url 'folios' %}">Cancel</a>
+        <a href="{% url 'folio_detail' quartet.folio.pk %}">Cancel</a>
     </div>
 </form>
 {% endblock %}

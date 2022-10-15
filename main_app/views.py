@@ -56,13 +56,14 @@ class FolioDelete(DeleteView):
     template_name = "folio_delete_confirmation.html"
     success_url = "/folios/"
 
-class QuartetDetail(TemplateView):
+class QuartetDetail(DetailView):
+    model = Quartet
     template_name = "quartet_detail.html"
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context["folios"] = Folio.objects.all()
-        # context["folios"] = Folio.objects.get(pk=self.object.pk)
+        # # context["folios"] = Folio.objects.get(pk=self.object.pk)
         context["quartets"] = Quartet.objects.all()
         context["entries"] = Entry.objects.all()
         return context
@@ -70,9 +71,22 @@ class QuartetDetail(TemplateView):
 class QuartetCreate(CreateView):
     model = Quartet
     fields = ['name', 'folio']
-    # def post(self, pk):
-    #     folio = Folio.objects.get(pk=pk)
     template_name = "new_quartet.html"
+    
+    def get_success_url(self):
+        return reverse('folio_detail', kwargs={'pk': self.object.folio.pk})
+
+class QuartetUpdate(UpdateView):
+    model = Quartet
+    fields = ['name']
+    template_name = "quartet_update.html"
+    
+    def get_success_url(self):
+        return reverse('quartet_detail', kwargs={'folio_pk': self.object.folio.pk, 'pk': self.object.pk})
+
+class QuartetDelete(DeleteView):
+    model = Quartet
+    template_name = "quartet_delete_confirmation.html"
     
     def get_success_url(self):
         return reverse('folio_detail', kwargs={'pk': self.object.folio.pk})
