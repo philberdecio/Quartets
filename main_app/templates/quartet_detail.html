@@ -3,10 +3,22 @@
 <div class = "wrapper">
     <div class="flex-container" id="folios_container">
         {% for entry in quartet.entries.all %}
-            <div class="flex-item"><p>{{ entry.text }}</p></div>
+            <div class="flex-item">
+                <img src="{{ entry.image }}">
+                {{ entry.embed | safe}}
+                <p>{{ entry.text }}</p>
+                <p>{{ entry.annotate }}</p>
+            </div>
         {% endfor %}
         {% if quartet.entries.all|length < 4 %}
-            <div class="flex-item"><p>new entry</p></div>
+            <div class="flex-item">
+                <p>Add a text entry</p>
+                <div class="new-entry-link"><a id ="new-quartet-link" href="{% url 'new_text_entry' quartet.folio.pk quartet.pk %}">CLICK HERE</a></div>
+                <p>Add an image</p>
+                <div class="new-entry-link"><a id ="new-quartet-link" href="{% url 'new_image_entry' quartet.folio.pk quartet.pk %}">CLICK HERE</a></div>
+                <p>Embed a YouTube video, Instagram post, or Tweet</p>
+                <div class="new-entry-link"><a id ="new-quartet-link" href="{% url 'new_embed_entry' quartet.folio.pk quartet.pk %}">CLICK HERE</a></div>
+            </div>
         {% endif %}
         <div id ="menu-bar">         
             <a class="quartet-link" href="{% url 'quartet_update' quartet.folio.pk quartet.pk %} "> <h3>{{ quartet.name }}</h3></a>

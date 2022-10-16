@@ -92,17 +92,33 @@ class QuartetDelete(DeleteView):
         return reverse('folio_detail', kwargs={'pk': self.object.folio.pk})
 
 class TextEntryCreate(CreateView):
-    model = Quartet
-    fields = ['text']
+    model = Entry
+    fields = ['text', 'quartet']
     template_name = "new_text_entry.html"
     
     def get_success_url(self):
-        return reverse('quartet_detail', kwargs={'pk': self.object.pk})
+        return reverse('quartet_detail', kwargs={'folio_pk': self.object.quartet.folio.pk,'pk': self.object.quartet.pk})
+
+class ImageEntryCreate(CreateView):
+    model = Entry
+    fields = ['image', 'annotate', 'quartet']
+    template_name = "new_image_entry.html"
+    
+    def get_success_url(self):
+        return reverse('quartet_detail', kwargs={'folio_pk': self.object.quartet.folio.pk,'pk': self.object.quartet.pk})
 
 class EmbedEntryCreate(CreateView):
-    model = Quartet
-    fields = ['url', 'annote']
+    model = Entry
+    fields = ['embed', 'quartet']
     template_name = "new_embed_entry.html"
     
     def get_success_url(self):
-        return reverse('quartet_detail', kwargs={'pk': self.object.pk})
+        return reverse('quartet_detail', kwargs={'folio_pk': self.object.quartet.folio.pk,'pk': self.object.quartet.pk})
+
+class VideoEntryCreate(CreateView):
+    model = Entry
+    fields = ['embed', 'annotate', 'quartet']
+    template_name = "new_video_entry.html"
+    
+    def get_success_url(self):
+        return reverse('quartet_detail', kwargs={'folio_pk': self.object.quartet.folio.pk,'pk': self.object.quartet.pk})

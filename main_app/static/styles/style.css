@@ -42,7 +42,7 @@ h1 {
     background: white;
     padding: 5px;
     width: 330px;
-    height: 600px;
+    height: 650px;
     margin-top: 10px;
     color: white;
     font-weight: bold;
@@ -130,8 +130,19 @@ h1 {
     font-family: Avantgarde, TeX Gyre Adventor, URW Gothic L, sans-serif;
     color: white;
 }
+.folio-title {
+    font-size: 35px;
+    text-decoration: none;
+    font-family: Avantgarde, TeX Gyre Adventor, URW Gothic L, sans-serif;
+    color: white;
+}
 
 #folio-menu {
+    text-align: center;
+    background: darkslategray;
+    height: auto;
+}
+#quartet-menu {
     text-align: center;
     background: darkslategray;
     height: auto;
@@ -185,8 +196,15 @@ a:visited {
 .quartet-link {
     color: white;
     margin: 20px;
+    font-size: 20px;
+    font-family: Avantgarde, TeX Gyre Adventor, URW Gothic L, sans-serif;
 }
 
 .folio-link {
     color: white;
+    font-size: 25px;
+}
+
+.new-entry-link {
+    color: black;   
 }

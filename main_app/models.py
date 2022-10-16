@@ -17,7 +17,8 @@ class Quartet(models.Model):
         return self.name
 
 class Entry (models.Model):
-    url = models.TextField(max_length=None, blank=True)
+    embed = models.TextField(max_length=None, blank=True)
+    image = models.TextField(max_length=None, blank=True)
     text = models.TextField(max_length=None, blank=True)
-    annote = models.TextField(max_length=150, blank=True)
+    annotate = models.TextField(max_length=150, blank=True)
     quartet = models.ForeignKey(Quartet, on_delete=models.CASCADE, related_name="entries")

@@ -14,6 +14,8 @@ urlpatterns = [
     path('folios/<int:folio_pk>/<int:pk>', views.QuartetDetail.as_view(), name="quartet_detail"),
     path('folios/<int:folio_pk>/<int:pk>/update', views.QuartetUpdate.as_view(), name="quartet_update"),
     path('folios/<int:folio_pk>/<int:pk>/delete', views.QuartetDelete.as_view(), name="quartet_delete"),
-    # path('folios/<int:folio_pk>/<int:pk>/quartets/new_text/', views.TextEntryCreate.as_view(), name="new_text_entry"),
-    # path('folios/<int:folio_pk>/<int:pk>/quartets/new_embed/', views.EmbedEntryCreate.as_view(), name="new_embed_entry"),
+    path('folios/<int:folio_pk>/<int:pk>/new_text_entry/', views.TextEntryCreate.as_view(), name="new_text_entry"),
+    path('folios/<int:folio_pk>/<int:pk>/new_image_entry/', views.ImageEntryCreate.as_view(), name="new_image_entry"),
+    path('folios/<int:folio_pk>/<int:pk>/new_embed_entry/', views.EmbedEntryCreate.as_view(), name="new_embed_entry"),
+    path('folios/<int:folio_pk>/<int:pk>/new_video_entry/', views.VideoEntryCreate.as_view(), name="new_video_entry"),
 ]
