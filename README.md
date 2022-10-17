@@ -25,10 +25,11 @@ Make sure you have Django installed first
 
 The user should find that four items is enough to allow for a variety of associations while being few enough to encourage focus. Allowing multiple quartets in a folio expands the range of possible associations between quartets. I see it as a kind of multidimensional note taking.
 
-## Wireframes
+## Screen Shots
 
-![Screen Shot 2022-10-16 at 9 44 36 PM (2)](https://user-images.githubusercontent.com/109258439/196101252-4bc392d4-ca85-41d3-ac82-5dea68bc9e1c.png)
-![Screen Shot 2022-10-16 at 9 52 50 PM (2)](https://user-images.githubusercontent.com/109258439/196101298-33bc0642-9bb6-42a0-9838-99ebe50ee30e.png)
+![Screen Shot 2022-10-17 at 1 37 01 AM (2)](https://user-images.githubusercontent.com/109258439/196106050-bda04a8a-9a4d-4200-8183-d3be34251af5.png)
+
+![Screen Shot 2022-10-16 at 9 52 50 PM (2)](https://user-images.githubusercontent.com/109258439/196105969-6184af96-66f0-401e-bd79-9d5e0653118a.png)
 
 ## Entity Relationship Diagram
 
