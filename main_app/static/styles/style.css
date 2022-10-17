@@ -42,7 +42,7 @@ h1 {
     background: white;
     padding: 5px;
     width: 330px;
-    height: 650px;
+    height: 710px;
     margin-top: 10px;
     color: white;
     font-weight: bold;
@@ -181,6 +181,8 @@ a {
     font-size: 12px;
     margin-top: 0px;
     color: white;
+    border: 1px solid white;
+    border-radius: .2em;
 }
 
 a:visited { 
@@ -191,6 +193,8 @@ a:visited {
     font-family: Avantgarde, TeX Gyre Adventor, URW Gothic L, sans-serif;
     font-size: 35px;
     color: white;
+    border: 2px solid white;
+    border-radius: .2em;
 }
 
 .quartet-link {
@@ -203,8 +207,96 @@ a:visited {
 .folio-link {
     color: white;
     font-size: 25px;
+    font-family: Avantgarde, TeX Gyre Adventor, URW Gothic L, sans-serif;
+    border: 2px solid white;
+    border-radius: .2em;
+
+}
+
+.folio-return-link {
+    color: white;
+    font-size: 25px;
+    font-family: Avantgarde, TeX Gyre Adventor, URW Gothic L, sans-serif;
+    border: 2px solid white;
+    border-radius: .2em;
+    padding: 0;
+}
+
+.new-entry-text {
+    font-size: 20px;
+    font-family: Avantgarde, TeX Gyre Adventor, URW Gothic L, sans-serif;
+    color: darkslategray;
+
 }
 
 .new-entry-link {
-    color: black;   
+    color: black;
+    text-decoration: none; 
+    font-size: 15px;;
+    border: 2px solid black;
+    border-radius: .2em;
+    margin-bottom: 10px; 
+}
+
+.new-entry-options{
+    text-align: center;
+}
+
+.new-entry-group {
+    border: 1px solid darkslategray;
+}
+
+.quartet-name {
+    font-weight: normal;
+    font-size: 40px;
+}
+
+.entry-delete-link {
+    font-size: 15px;
+    margin-bottom: 15px;
+    color: black;
+    border: 1px solid black;
+    border-radius: .2em;
+}
+
+.login-name {
+    color: white;
+    font-weight: normal;
+    font-family: Avantgarde, TeX Gyre Adventor, URW Gothic L, sans-serif;
+    margin-bottom: 10px;
+    margin-left: 10px;;
+}
+
+.login-item {
+    color: white;
+    font-weight: normal;
+    font-family: Avantgarde, TeX Gyre Adventor, URW Gothic L, sans-serif;
+    border: 2px solid white;
+    border-radius: .2em;
+    margin: 20px 10px 10px 10px;
+    align-self: center;
+}
+
+.login-menu {
+    align-items: center;
+}
+
+.spacer {
+    color: lightslategray;
+}
+
+.no-folios {
+    font-weight: normal;
+    font-family: Avantgarde, TeX Gyre Adventor, URW Gothic L, sans-serif;
+    font-size: 20px;
+}
+
+.entry-text {
+    font-weight: normal;
+    font-size: 20px;
+}
+
+.entry-annotation {
+    font-weight: normal;
+    font-size: 25px;
 }

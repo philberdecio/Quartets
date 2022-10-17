@@ -12,14 +12,18 @@
 <body>
     <div id="header">
         <h1>Quartets</h1>
-        <div id = "login-info">
-            <div id = "button-border">
-                <h3 id="signup-message">Sign Up</h3>
+        {% if user.is_authenticated %}
+            <div class="login-menu">
+                <span class="login-name">{{user.username}}</span><br>
+                <span class="spacer">_____</span><br>
+                <a class="login-item" href="{% url 'logout' %}">Logout</a>
             </div>
-            <div id = "button-border">
-                <h3 id="login-message">Login</h3>
+        {% else %}
+            <div class="login-menu">
+                <a class="login-item" href="{% url 'login' %}">Log In</a>
+                <a class="login-item" href="{% url 'signup' %}">Sign Up</a>
             </div>
-        </div>
+        {% endif %}
     </div>
     {% block content %}
     {% endblock %}

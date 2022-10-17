@@ -4,25 +4,36 @@
     <div class="flex-container" id="folios_container">
         {% for entry in quartet.entries.all %}
             <div class="flex-item">
+                <a class="entry-delete-link" href="{% url 'entry_delete' entry.quartet.folio.pk entry.quartet.pk entry.pk%}">DELETE</a>
                 <img src="{{ entry.image }}">
                 {{ entry.embed | safe}}
-                <p>{{ entry.text }}</p>
-                <p>{{ entry.annotate }}</p>
+                <p class="entry-text">{{ entry.text }}</p>
+                <p class="entry-annotation">{{ entry.annotate }}</p>
             </div>
         {% endfor %}
         {% if quartet.entries.all|length < 4 %}
-            <div class="flex-item">
-                <p>Add a text entry</p>
-                <div class="new-entry-link"><a id ="new-quartet-link" href="{% url 'new_text_entry' quartet.folio.pk quartet.pk %}">CLICK HERE</a></div>
-                <p>Add an image</p>
-                <div class="new-entry-link"><a id ="new-quartet-link" href="{% url 'new_image_entry' quartet.folio.pk quartet.pk %}">CLICK HERE</a></div>
-                <p>Embed a YouTube video, Instagram post, or Tweet</p>
-                <div class="new-entry-link"><a id ="new-quartet-link" href="{% url 'new_embed_entry' quartet.folio.pk quartet.pk %}">CLICK HERE</a></div>
+            <div class="flex-item new-entry-options">
+                <div class = "new-entry-group">
+                    <p class = "new-entry-text">Add a text entry</p>
+                    <div class="new-entry"><a class="new-entry-link" href="{% url 'new_text_entry' quartet.folio.pk quartet.pk %}">CLICK HERE</a></div>
+                </div>
+                <div class = "new-entry-group">
+                    <p class = "new-entry-text">Add an image</p>
+                    <div class="new-entry"><a class="new-entry-link" href="{% url 'new_image_entry' quartet.folio.pk quartet.pk %}">CLICK HERE</a></div>
+                </div>
+                <div class = "new-entry-group">
+                    <p class = "new-entry-text">Embed an Instagram post or Tweet</p>
+                    <div class="new-entry"><a class="new-entry-link" href="{% url 'new_embed_entry' quartet.folio.pk quartet.pk %}">CLICK HERE</a></div>
+                </div>
+                <div class = "new-entry-group">
+                    <p class = "new-entry-text">Embed a YouTube video</p>
+                    <div class="new-entry"><a class="new-entry-link" href="{% url 'new_video_entry' quartet.folio.pk quartet.pk %}">CLICK HERE</a></div>
+                </div>
             </div>
         {% endif %}
         <div id ="menu-bar">         
-            <a class="quartet-link" href="{% url 'quartet_update' quartet.folio.pk quartet.pk %} "> <h3>{{ quartet.name }}</h3></a>
-            <a class="folio-link" href="{% url 'folio_detail' quartet.folio.pk %}">BACK TO FOLIO</a>
+            <a class="quartet-link" href="{% url 'quartet_update' quartet.folio.pk quartet.pk %} "> <h2 class="quartet-name">{{ quartet.name }}</h2></a>
+            <a class="folio-return-link" href="{% url 'folio_detail' quartet.folio.pk %}">BACK TO FOLIO</a>
         </div>
     </div>
 </div>

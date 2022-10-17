@@ -11,7 +11,7 @@
                     <a href="/folios/{{folio.id}}/delete" class="folio-delete-link">DELETE</a>
                 </div>
             {% empty %}
-                <h2>You haven't created any folios yet</h2>
+                <h2 class="no-folios" >You haven't created any folios yet</h2>
             {% endfor %}
             <div class="create-link-div">
                 <a class = "create-link" href="{% url 'new_folio' %}">Create New Folio</a>

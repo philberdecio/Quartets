@@ -5,7 +5,6 @@ from . import views
 urlpatterns = [
     path('', views.Home.as_view(), name="home"),
     path('folios/', views.FolioList.as_view(), name="folios"),
-    path('quartets/', views.Quartets.as_view(), name="quartets"),
     path('folios/new/', views.FolioCreate.as_view(), name="new_folio"),
     path('folios/<int:pk>/', views.FolioDetail.as_view(), name="folio_detail"),
     path('folios/<int:pk>/update', views.FolioUpdate.as_view(), name="folio_update"),
@@ -18,4 +17,6 @@ urlpatterns = [
     path('folios/<int:folio_pk>/<int:pk>/new_image_entry/', views.ImageEntryCreate.as_view(), name="new_image_entry"),
     path('folios/<int:folio_pk>/<int:pk>/new_embed_entry/', views.EmbedEntryCreate.as_view(), name="new_embed_entry"),
     path('folios/<int:folio_pk>/<int:pk>/new_video_entry/', views.VideoEntryCreate.as_view(), name="new_video_entry"),
+    path('folios/<int:folio_pk>/<int:quartet_pk>/<int:pk>/delete/', views.EntryDelete.as_view(), name="entry_delete"),
+    path('accounts/signup/', views.Signup.as_view(), name="signup")
 ]
