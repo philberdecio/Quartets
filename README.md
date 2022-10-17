@@ -10,16 +10,30 @@
 
 Django, PostgreSQL
 
-## Installation Steps
+## Installation Steps (Mac)
 
-Make sure you have Django installed first
+Make sure you have Django and Pipenv installed on your system before getting started
 1. Fork and clone the repository
-2. Create your own virtual environment
-3. Install dependencies
-4. Create a new PostgreSQL database
-5. Make your migrations
-6. Create a new superuser
-7. Start the development server
+
+2. In root directory created by cloning: 
+
+pipenv install
+
+3. Create a new PostgreSQL database: 
+
+createdb quartets
+
+4. Make migrations: 
+
+python3 manage.py migrate
+
+5. Create a new superuser: 
+
+python3 manage.py createsuperuser
+
+6. Start the development server: 
+
+python3 manage.py runserver
 
 ## User Stories
 
