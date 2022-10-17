@@ -322,3 +322,7 @@ a:visited {
     font-weight: normal;
     font-size: 25px;
 }
+
+.delete-confirmation {
+    color: white;
+}
