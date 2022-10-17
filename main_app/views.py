@@ -87,11 +87,16 @@ class QuartetCreate(LoginRequiredMixin, CreateView):
     fields = ['name', 'folio']
     template_name = "new_quartet.html"
 
+
     def get_form(self, form_class=None):
         form = super().get_form(form_class=None)
         form.fields['folio'].queryset = form.fields['folio'].queryset.filter(user=self.request.user.id)
         return form
     
+    def form_valid(self, form):
+        form.instance.user = self.request.user
+        return super(QuartetCreate, self).form_valid(form)
+
     def get_success_url(self):
         return reverse('folio_detail', kwargs={'pk': self.object.folio.pk})
 
@@ -110,34 +115,54 @@ class QuartetDelete(DeleteView):
     def get_success_url(self):
         return reverse('folio_detail', kwargs={'pk': self.object.folio.pk})
 
-class TextEntryCreate(CreateView):
+class TextEntryCreate(LoginRequiredMixin, CreateView):
     model = Entry
     fields = ['text', 'quartet']
     template_name = "new_text_entry.html"
+
+    def get_form(self, form_class=None):
+        form = super().get_form(form_class=None)
+        form.fields['quartet'].queryset = form.fields['quartet'].queryset.filter(user=self.request.user.id)
+        return form
     
     def get_success_url(self):
         return reverse('quartet_detail', kwargs={'folio_pk': self.object.quartet.folio.pk,'pk': self.object.quartet.pk})
 
-class ImageEntryCreate(CreateView):
+class ImageEntryCreate(LoginRequiredMixin, CreateView):
     model = Entry
     fields = ['image', 'annotate', 'quartet']
     template_name = "new_image_entry.html"
+
+    def get_form(self, form_class=None):
+        form = super().get_form(form_class=None)
+        form.fields['quartet'].queryset = form.fields['quartet'].queryset.filter(user=self.request.user.id)
+        return form
     
     def get_success_url(self):
         return reverse('quartet_detail', kwargs={'folio_pk': self.object.quartet.folio.pk,'pk': self.object.quartet.pk})
 
-class EmbedEntryCreate(CreateView):
+class EmbedEntryCreate(LoginRequiredMixin, CreateView):
     model = Entry
     fields = ['embed', 'quartet']
     template_name = "new_embed_entry.html"
+
+    def get_form(self, form_class=None):
+        form = super().get_form(form_class=None)
+        form.fields['quartet'].queryset = form.fields['quartet'].queryset.filter(user=self.request.user.id)
+        return form
     
     def get_success_url(self):
         return reverse('quartet_detail', kwargs={'folio_pk': self.object.quartet.folio.pk,'pk': self.object.quartet.pk})
 
-class VideoEntryCreate(CreateView):
+class VideoEntryCreate(LoginRequiredMixin, CreateView):
     model = Entry
     fields = ['embed', 'annotate', 'quartet']
     template_name = "new_video_entry.html"
+
+    def get_form(self, form_class=None):
+        form = super().get_form(form_class=None)
+        form.fields['quartet'].queryset = form.fields['quartet'].queryset.filter(user=self.request.user.id)
+        return form
     
     def get_success_url(self):
         return reverse('quartet_detail', kwargs={'folio_pk': self.object.quartet.folio.pk,'pk': self.object.quartet.pk})

@@ -7,13 +7,14 @@ from django.contrib.auth.models import User
 class Folio(models.Model):
     name = models.CharField(max_length=100)
     user = models.ForeignKey(User, on_delete=models.CASCADE, default=1)
-    
+
     def __str__(self):
         return self.name
 
 class Quartet(models.Model):
     name = models.CharField(max_length=250)
     folio = models.ForeignKey(Folio, on_delete=models.CASCADE, related_name="quartets")
+    user = models.ForeignKey(User, on_delete=models.CASCADE, default=1)
 
     def __str__(self):
         return self.name
