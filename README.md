@@ -13,7 +13,7 @@ Django, PostgreSQL
 ## Installation Steps
 
 Make sure you have Django installed first
-1. Clone the repository
+1. Fork and clone the repository
 2. Create your own virtual environment
 3. Install dependencies
 4. Create a new PostgreSQL database
