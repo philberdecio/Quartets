@@ -14,8 +14,8 @@
         <h1>Quartets</h1>
         {% if user.is_authenticated %}
             <div class="login-menu">
-                <span class="login-name">{{user.username}}</span><br>
-                <span class="spacer">_____</span><br>
+                <div class="login-name">{{user.username}}</div><br>
+                <!-- <div class="spacer">_____</div><br> -->
                 <a class="login-item" href="{% url 'logout' %}">Logout</a>
             </div>
         {% else %}

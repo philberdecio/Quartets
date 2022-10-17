@@ -286,7 +286,7 @@ a:visited {
     font-weight: normal;
     font-family: Avantgarde, TeX Gyre Adventor, URW Gothic L, sans-serif;
     margin-bottom: 10px;
-    margin-left: 10px;;
+    /* margin-left: 10px;; */
 }
 
 .login-item {
@@ -295,12 +295,15 @@ a:visited {
     font-family: Avantgarde, TeX Gyre Adventor, URW Gothic L, sans-serif;
     border: 2px solid white;
     border-radius: .2em;
-    margin: 20px 10px 10px 10px;
-    align-self: center;
+    margin: 10px 10px 10px 10px;
 }
 
 .login-menu {
     align-items: center;
+}
+
+.title {
+    font-size: 35px;
 }
 
 .spacer {
@@ -325,4 +328,9 @@ a:visited {
 
 .delete-confirmation {
     color: white;
+}
+
+.form-wrapper {
+    width: 20%;
+    margin: 0 auto;
 }
